@@ -33,17 +33,5 @@ Change it with environment variables before real use:
 pytest
 ```
 
-## Deploy on Render (free plan)
-1. Push this folder to GitHub.
-2. On Render, create a **New Web Service** and connect the repo.
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `gunicorn app:app`
-5. Add the environment variables above (`SECRET_KEY`, `OWNER_USERNAME`, `OWNER_PASSWORD`).
-
-Note: free hosting may reset the SQLite file when the service restarts. Fine for a demo; for real use, attach a persistent disk and point `DATABASE` to it.
-
-## Deploy on PythonAnywhere
-Upload the files, create a virtualenv, `pip install -r requirements.txt`, then point the WSGI file at `from app import app as application` and set the environment variables.
-
 ## Known limits / future work
 Barcode scanning, sales tracking, multiple staff accounts, supplier management, Excel export and a mobile app are not included.
